@@ -1,0 +1,49 @@
+.custom-cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+    /* Slight delay for the "following" effect is handled by the browser's paint usually, 
+     but adding a transition to 'transform' would lag the actual position. 
+     Instead, we just transition the visual properties like size. */
+    will-change: transform, width, height;
+}
+
+.custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10000;
+    will-change: transform;
+}
+
+/* Hover State */
+.custom-cursor-outline.hover {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: transparent;
+    backdrop-filter: blur(2px);
+}
+
+.custom-cursor-dot.hover {
+    opacity: 0.5;
+    width: 4px;
+    height: 4px;
+}
+
+/* Hide default cursor globally when this component is active */
+/* Note: This class is usually added to body by the component or global css */
+@media (hover: hover) and (pointer: fine) {
+    /* Only apply custom cursor logic on devices that support hover */
+}

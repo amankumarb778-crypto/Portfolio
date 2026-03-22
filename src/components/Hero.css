@@ -1,0 +1,264 @@
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding-top: var(--nav-height);
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 600px;
+}
+
+/* Profile Photo Styles */
+.profile-photo-wrapper {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.profile-photo {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, var(--primary-color), #3b82f6, #c084fc);
+    animation: rotate-gradient 8s linear infinite;
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+}
+
+.profile-photo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, var(--primary-color), #3b82f6, #c084fc);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: rotate-gradient 8s linear infinite reverse;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-color);
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover .profile-img {
+    transform: scale(1.05);
+}
+
+@keyframes rotate-gradient {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    filter: drop-shadow(0 20px 30px rgba(59, 130, 246, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.floating-image {
+    animation: float-img 6s ease-in-out infinite;
+}
+
+@keyframes float-img {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.hero-title {
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary-color);
+    background: linear-gradient(to right, var(--primary-color), #c084fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: 20px;
+}
+
+/* Social Icons */
+.hero-socials,
+.contact-socials {
+    display: flex;
+    gap: 18px;
+    margin-top: 28px;
+    align-items: center;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 1.35rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.social-icon:hover {
+    color: #fff;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 968px) {
+
+    .hero-socials,
+    .contact-socials {
+        justify-content: center;
+    }
+
+    .hero-container {
+        flex-direction: column-reverse;
+        /* Image on top usually looks better on mobile, or text on top? Standard is text then image in markup, so column makes image bottom. column-reverse makes image top. */
+        /* But wait, markup is Content then Image. */
+        /* So column = Content top, Image bottom. */
+        /* column-reverse = Image top, Content bottom. */
+        /* Let's stick with column (text top) for now or reverse if image is decorative. */
+        /* Actually, usually Hero image is nice on top on mobile if it's small, but text is more important. */
+        /* Let's use column (default) but center text. */
+        flex-direction: column;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .hero-cta {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        max-width: 80%;
+        margin-top: 40px;
+    }
+
+    .profile-photo-wrapper {
+        justify-content: center;
+    }
+
+    .profile-photo {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* Background Blobs */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: float 10s infinite ease-in-out;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--primary-color);
+    top: -100px;
+    right: -100px;
+}
+
+.blob-2 {
+    width: 300px;
+    height: 300px;
+    background: #3b82f6;
+    bottom: 0;
+    left: -50px;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, 40px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}

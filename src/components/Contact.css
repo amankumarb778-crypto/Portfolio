@@ -1,0 +1,19 @@
+.contact-container {
+    text-align: center;
+    max-width: 600px;
+}
+
+.contact-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+}
+
+.contact-btn {
+    font-size: 1.1rem;
+    padding: 15px 40px;
+}
+
+.contact-socials {
+    justify-content: center;
+}
