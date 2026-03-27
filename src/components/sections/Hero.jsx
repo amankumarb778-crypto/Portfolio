@@ -30,17 +30,17 @@ const Hero = () => {
 
     return (
         <section id="home" className="section relative min-h-screen flex items-center overflow-hidden">
-            <div className="container flex items-center justify-between gap-12 flex-wrap-reverse relative z-10">
+            <div className="container flex items-center justify-between gap-20 md:gap-32 lg:gap-56 lg:flex-nowrap flex-wrap-reverse relative z-10">
 
                 {/* Text Content */}
                 <motion.div
-                    className="flex-1 min-w-[300px]"
+                    className="w-full md:w-auto md:flex-1 max-w-[700px]"
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                 >
                     <motion.h2
-                        className="text-xl md:text-2xl font-semibold mb-4"
+                        className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-6"
                         style={{ color: 'var(--primary-color)' }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ const Hero = () => {
                         className="mb-4"
                         style={{
                             fontFamily: "'Outfit', sans-serif",
-                            fontSize: 'clamp(4rem, 12vw, 7rem)',
+                            fontSize: 'clamp(4rem, 9vw, 9rem)',
                             fontWeight: '900',
                             lineHeight: 1.0,
                             letterSpacing: '-0.05em',
@@ -66,11 +66,11 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.3 }}
                     >
-                        Aman
+                        Aman Kumar
                     </motion.h1>
 
                     <motion.h3
-                        className="text-2xl md:text-3xl font-semibold h-12"
+                        className="text-2xl md:text-4xl lg:text-5xl font-semibold h-16 md:h-20"
                         style={{ color: 'var(--text-secondary)' }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -82,8 +82,8 @@ const Hero = () => {
                     </motion.h3>
 
                     <motion.p
-                        className="max-w-[650px] my-8 text-lg leading-relaxed"
-                        style={{ color: 'var(--text-secondary)' }}
+                        className="my-8 text-lg md:text-xl lg:text-2xl leading-relaxed"
+                        style={{ color: 'var(--text-secondary)', maxWidth: '650px' }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
@@ -93,35 +93,36 @@ const Hero = () => {
                     </motion.p>
 
                     <motion.div
-                        className="flex gap-5 mt-8"
+                        className="flex flex-wrap gap-5 mt-8"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.7 }}
                     >
-                        <Button onClick={() => window.open('https://your-resume-link.com', '_blank')}>View Resume</Button>
+                        <Button onClick={() => window.open('/Aman_Kumar_Resume.pdf', '_blank')}>View Resume</Button>
                         <Button variant="outline" onClick={() => window.location.href = '#projects'}>View Projects</Button>
                     </motion.div>
                 </motion.div>
 
                 {/* Profile Photo with Animated Mesh Gradient Background */}
                 <motion.div
-                    className="flex-1 flex justify-center min-w-[300px] relative"
+                    className="w-full sm:w-auto flex justify-center relative"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                 >
                     {/* Animated Mesh Gradient Background */}
                     <div
-                        className="absolute top-1/2 left-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
+                        className="absolute top-1/2 left-1/2 w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-full pointer-events-none"
                         style={{
                             background: 'conic-gradient(from 0deg, #A855F7, #3b82f6, #d946ef, #06b6d4, #A855F7)',
                             filter: 'blur(80px)',
                             opacity: 0.4,
                             animation: 'mesh-rotate 12s linear infinite',
+                            transform: 'translate(-50%, -50%)',
                         }}
                     />
                     <div
-                        className="absolute top-1/2 left-1/2 w-[350px] h-[350px] rounded-full pointer-events-none"
+                        className="absolute top-1/2 left-1/2 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] rounded-full pointer-events-none"
                         style={{
                             background: 'radial-gradient(circle, rgba(168, 85, 247, 0.5), transparent 70%)',
                             animation: 'pulse-glow 4s ease-in-out infinite',
@@ -131,18 +132,22 @@ const Hero = () => {
 
                     {/* Profile Photo Circle */}
                     <div
-                        className="relative w-[340px] h-[340px] md:w-[380px] md:h-[380px] rounded-full p-[5px] cursor-default transition-all duration-400 z-10"
+                        className="relative w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[380px] md:h-[380px] lg:w-[420px] lg:h-[420px] rounded-full p-[5px] cursor-default transition-all duration-400 z-10"
                         style={{
                             background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
                             boxShadow: '0 0 0 6px rgba(168,85,247,0.15), 0 20px 50px rgba(168,85,247,0.35)',
                         }}
                         onMouseEnter={e => {
-                            e.currentTarget.style.transform = 'scale(1.03)';
-                            e.currentTarget.style.boxShadow = '0 0 0 8px rgba(168,85,247,0.25), 0 25px 60px rgba(168,85,247,0.5)';
+                            if (window.innerWidth > 768) {
+                                e.currentTarget.style.transform = 'scale(1.03)';
+                                e.currentTarget.style.boxShadow = '0 0 0 8px rgba(168,85,247,0.25), 0 25px 60px rgba(168,85,247,0.5)';
+                            }
                         }}
                         onMouseLeave={e => {
-                            e.currentTarget.style.transform = 'scale(1)';
-                            e.currentTarget.style.boxShadow = '0 0 0 6px rgba(168,85,247,0.15), 0 20px 50px rgba(168,85,247,0.35)';
+                            if (window.innerWidth > 768) {
+                                e.currentTarget.style.transform = 'scale(1)';
+                                e.currentTarget.style.boxShadow = '0 0 0 6px rgba(168,85,247,0.15), 0 20px 50px rgba(168,85,247,0.35)';
+                            }
                         }}
                     >
                         <div className="w-full h-full rounded-full overflow-hidden border-4 border-[var(--bg-dark)]"

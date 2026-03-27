@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman Kumar - Dax Style Resume</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-text: #333;
+            --secondary-text: #555;
+            --accent-color: #000;
+            --line-color: #ccc;
+            --sidebar-width: 280px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.5;
+            color: var(--primary-text);
+            background-color: #fff;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-left h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 42px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+
+        .header-left p {
+            font-size: 18px;
+            color: var(--secondary-text);
+            font-weight: 500;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 14px;
+        }
+
+        .contact-row {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .links-bar {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .links-bar a {
+            color: var(--primary-text);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+
+        .links-bar a:hover {
+            color: #000;
+        }
+
+        .container {
+            display: flex;
+            gap: 40px;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            flex-shrink: 0;
+            border-right: 1px solid var(--line-color);
+            padding-right: 20px;
+        }
+
+        .main {
+            flex-grow: 1;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 20px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .sidebar h2 {
+            text-align: left;
+        }
+
+        .summary-text {
+            text-align: center;
+            font-style: italic;
+            font-size: 14px;
+            margin-bottom: 30px;
+            padding: 0 20px;
+            color: var(--secondary-text);
+        }
+
+        .skill-group {
+            margin-bottom: 15px;
+        }
+
+        .skill-group h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .skill-list li {
+            position: relative;
+            padding-left: 15px;
+            margin-bottom: 3px;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .item {
+            margin-bottom: 20px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .item-title {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .item-date {
+            font-size: 13px;
+            color: var(--secondary-text);
+        }
+
+        .item-bullets {
+            list-style: none;
+            font-size: 14px;
+        }
+
+        .item-bullets li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 5px;
+        }
+
+        .item-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: var(--secondary-text);
+        }
+
+        .tech-stack {
+            font-size: 13px;
+            font-weight: 500;
+            margin-top: 8px;
+            color: var(--secondary-text);
+        }
+
+        .certificate-item {
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .exploring-item {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <h1>AMAN KUMAR</h1>
+            <p>Full-Stack Developer</p>
+        </div>
+        <div class="header-right">
+            <div class="contact-row">+91 92798 11913 <i class="fas fa-phone"></i></div>
+            <div class="contact-row">aman.kr.cg@gmail.com <i class="fas fa-envelope"></i></div>
+            <div class="contact-row">Kalol, Gujarat <i class="fas fa-location-dot"></i></div>
+        </div>
+    </header>
+
+    <div class="links-bar">
+        <a href="https://github.com/amankumarb778-crypto">Github</a>
+        <a href="https://linkedin.com/in/aman-kumar">LinkedIN</a>
+        <a href="#">Leetcode</a>
+        <a href="#">X (twitter)</a>
+    </div>
+
+    <section class="summary">
+        <h2>SUMMARY</h2>
+        <p class="summary-text">
+            B.E. Computer Engineering student with hands-on experience in building and deploying modern web
+            applications.
+            Skilled in full-stack development using the MERN stack with a focus on creating efficient, scalable, and
+            AI-integrated solutions.
+            Actively participating in hackathons to solve complex challenges and continuously mastering advanced backend
+            architectures.
+        </p>
+    </section>
+
+    <div class="container">
+        <aside class="sidebar">
+            <section>
+                <h2>SKILLS</h2>
+                <div class="skill-group">
+                    <h3>Languages</h3>
+                    <ul class="skill-list">
+                        <li>C, C++, JavaScript</li>
+                        <li>HTML, CSS</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Frontend</h3>
+                    <ul class="skill-list">
+                        <li>React.js, Next.js (Exploring)</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Backend & DB</h3>
+                    <ul class="skill-list">
+                        <li>Node.js, Express.js</li>
+                        <li>REST APIs</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h3>Tools</h3>
+                    <ul class="skill-list">
+                        <li>Git, GitHub, Postman</li>
+                        <li>Figma</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>HACKATHONS</h2>
+                <ul class="skill-list">
+                    <li>LNMIT Hackathon — Round 1</li>
+                    <li>OceanLab X Charusat — Round 1</li>
+                    <li>hack with Gujarat</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>ACHIEVEMENT</h2>
+                <ul class="skill-list">
+                    <li>Finalist — LNMIT Hackathon</li>
+                    <li>Finalist — OceanLab X Charusat</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>CERTIFICATIONS</h2>
+                <div class="certificate-item">MongoDB Certification</div>
+                <div class="certificate-item">Javascript basic</div>
+                <div class="certificate-item">Node.js basic</div>
+            </section>
+
+            <section>
+                <h2>EXPLORING</h2>
+                <div class="exploring-item">DSA and Problem Solving</div>
+                <div class="exploring-item">Backend Scalability</div>
+                <div class="exploring-item">Advanced React</div>
+            </section>
+        </aside>
+
+        <main class="main">
+            <section>
+                <h2>EDUCATION</h2>
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">Swaminarayan University</span>
+                        <span class="item-date">2025 - 2029</span>
+                    </div>
+                    <p style="font-size: 14px;">Bachelor of Engineering in Computer Engineering</p>
+                </div>
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">MLSM Darbhanga</span>
+                        <span class="item-date">2022 - 2024</span>
+                    </div>
+                    <p style="font-size: 14px;">Class 12 (Science)</p>
+                </div>
+            </section>
+
+            <section>
+                <h2>PROJECTS</h2>
+
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">Nexus AI – Intelligent Resume Analyzer</span>
+                        <span class="item-date">Feb 2025</span>
+                    </div>
+                    <p style="font-size: 14px; font-weight: 500; margin-left:15px; margin-bottom: 5px;">Key Features:
+                    </p>
+                    <ul class="item-bullets">
+                        <li>Developed an AI-based resume analysis system with automated ATS scoring calculations.</li>
+                        <li>Implemented intelligent skill gap detection and tailored suggestions for profile
+                            improvement.</li>
+                        <li>Built a clean, responsive frontend using React and a robust backend with Node.js.</li>
+                        <li>Deployed the full-stack application on Netlify for seamless accessibility.</li>
+                    </ul>
+                    <p class="tech-stack" style="margin-top: 10px;">• Tech Stack: React.js, Node.js, Express.js,
+                        MongoDB, Tailwind CSS</p>
+                    <p style="font-size: 13px; margin-top: 5px; margin-left: 15px;">• Live Link: <a href="#">Link</a> |
+                        GitHub Repository: <a href="https://github.com/amankumarb778-crypto"
+                            style="text-decoration: underline;">Link</a></p>
+                </div>
+
+                <div class="item">
+                    <div class="item-header">
+                        <span class="item-title">Inventory Management System</span>
+                        <span class="item-date">Jan 2025</span>
+                    </div>
+                    <p style="font-size: 14px; font-weight: 500; margin-left:15px; margin-bottom: 5px;">Key Features:
+                    </p>
+                    <ul class="item-bullets">
+                        <li>Engineered a comprehensive billing and customer management system with secure data handling.
+                        </li>
+                        <li>Designed and integrated RESTful APIs to efficiently manage customers, invoices, and
+                            transactions.</li>
+                        <li>Created an interactive dashboard for real-time reporting and inventory tracking.</li>
+                        <li>Optimized system performance for handling concurrent transaction updates.</li>
+                    </ul>
+                    <p class="tech-stack" style="margin-top: 10px;">• Tech Stack: React.js, Node.js, Express.js, MongoDB
+                    </p>
+                    <p style="font-size: 13px; margin-top: 5px; margin-left: 15px;">• GitHub Repository: <a
+                            href="https://github.com/amankumarb778-crypto" style="text-decoration: underline;">Link</a>
+                    </p>
+                </div>
+
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
