@@ -29,7 +29,7 @@ const Hero = () => {
         }, isDeleting ? 50 : 150);
 
         return () => clearTimeout(timeout);
-    }, [displayText, isDeleting, textIndex, roles]);
+    }, [displayText, isDeleting, textIndex]);
 
     return (
         <section id="home" className="section relative min-h-screen flex items-center overflow-hidden">

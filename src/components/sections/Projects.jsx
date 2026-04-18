@@ -296,13 +296,6 @@ const ProjectCard = ({ project, index }) => {
     );
 };
 
-const SectionHeader = ({ icon: Icon, label, color = "var(--primary-color)" }) => (
-    <div className="flex items-center gap-4 mb-8">
-        <Icon className="text-2xl" style={{ color }} />
-        <h3 className="text-xl font-extrabold text-white whitespace-nowrap tracking-tight">{label}</h3>
-        <div className="flex-grow h-px bg-gradient-to-r from-white/10 to-transparent" />
-    </div>
-);
 
 const Projects = () => {
     const [activeTab, setActiveTab] = useState(0);
