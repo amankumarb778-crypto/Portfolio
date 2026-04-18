@@ -5,7 +5,7 @@ import { SiPostman, SiLeetcode } from 'react-icons/si';
 import html2pdf from 'html2pdf.js';
 import './Resume.css';
 
-const Resume = () => {
+const Resume = ({ isViewer = false }) => {
     const resumeRef = React.useRef(null);
 
     const handlePrint = () => {
@@ -91,14 +91,16 @@ const Resume = () => {
     return (
         <div className="resume-container py-20 px-4 sm:px-8 md:px-12 relative min-h-screen bg-[var(--bg-dark)]">
             {/* Header / Actions */}
-            <div className="max-w-5xl mx-auto flex justify-end mb-8 no-print">
-                <button
-                    onClick={handlePrint}
-                    className="flex items-center gap-2 px-6 py-3 bg-[var(--primary-color)] text-white rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all shadow-[0_4px_15px_var(--primary-glow)]"
-                >
-                    <FaDownload /> Download PDF
-                </button>
-            </div>
+            {!isViewer && (
+                <div className="max-w-5xl mx-auto flex justify-end mb-8 no-print">
+                    <button
+                        onClick={handlePrint}
+                        className="flex items-center gap-2 px-6 py-3 bg-[var(--primary-color)] text-white rounded-xl font-bold hover:brightness-110 active:scale-95 transition-all shadow-[0_4px_15px_var(--primary-glow)]"
+                    >
+                        <FaDownload /> Download PDF
+                    </button>
+                </div>
+            )}
 
             <motion.div
                 ref={resumeRef}

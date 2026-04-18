@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
-import { FaHome, FaUser, FaCode, FaFolderOpen, FaAward, FaEnvelope, FaSun, FaMoon, FaFigma, FaTrophy, FaStar, FaGraduationCap, FaBriefcase } from 'react-icons/fa';
+import { FaHome, FaUser, FaCode, FaFolderOpen, FaAward, FaEnvelope, FaSun, FaMoon, FaFigma, FaTrophy, FaStar, FaGraduationCap, FaBriefcase, FaFilePdf } from 'react-icons/fa';
 import ThemeSwitcher from './common/ThemeSwitcher';
 import './Navbar.css';
 
@@ -15,6 +15,7 @@ const NAV_ITEMS = [
     { id: 'achievements', label: 'ACHIEVEMENTS', icon: <FaStar size={12} /> },
     { id: 'education', label: 'EDUCATION', icon: <FaGraduationCap size={12} /> },
     { id: 'certificates', label: 'CERTIFICATES', icon: <FaAward size={12} /> },
+    { id: 'docs', label: 'DOCS', icon: <FaFilePdf size={12} /> },
     { id: 'contact', label: 'CONTACT', icon: <FaEnvelope size={12} /> }
 ];
 

@@ -15,6 +15,7 @@ import Achievements from './components/sections/Achievements';
 import Education from './components/sections/Education';
 import Certificates from './components/sections/Certificates';
 import Resume from './components/sections/Resume';
+import Docs from './components/sections/Docs';
 import Contact from './components/sections/Contact';
 import Footer from './components/sections/Footer';
 import './App.css';
@@ -130,6 +131,7 @@ function App() {
               <Route path="/education" element={<><Helmet><title>Education | Aman Kumar</title></Helmet><Education /></>} />
               <Route path="/certificates" element={<><Helmet><title>Certifications</title></Helmet><Certificates /></>} />
               <Route path="/resume" element={<><Helmet><title>Resume | Aman Kumar</title></Helmet><Resume /></>} />
+              <Route path="/docs" element={<><Helmet><title>Documents | Aman Kumar</title></Helmet><Docs /></>} />
               <Route path="/contact" element={<><Helmet><title>Contact Me</title></Helmet><Contact /></>} />
             </Routes>
 
