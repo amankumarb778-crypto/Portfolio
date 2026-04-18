@@ -2,11 +2,28 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub, FaGlobe, FaCode, FaTwitter, FaDownload, FaBriefcase, FaGraduationCap, FaTrophy, FaStar, FaAward, FaYoutube, FaProjectDiagram } from 'react-icons/fa';
 import { SiPostman, SiLeetcode } from 'react-icons/si';
+import html2pdf from 'html2pdf.js';
 import './Resume.css';
 
 const Resume = () => {
+    const resumeRef = React.useRef(null);
+
     const handlePrint = () => {
-        window.print();
+        const element = resumeRef.current;
+        const opt = {
+            margin: 0,
+            filename: 'Aman_Kumar_Resume.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: {
+                scale: 2,
+                useCORS: true,
+                letterRendering: true,
+                backgroundColor: '#0a0a0a'
+            },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        html2pdf().set(opt).from(element).save();
     };
 
     const containerVariants = {
@@ -31,7 +48,7 @@ const Resume = () => {
             role: 'Full Stack Developer',
             description: 'Enterprise-grade AI Resume Optimizer that analyzes resumes and provides intelligent feedback.',
             links: {
-                youtube: 'https://youtu.be/nexus-ai-demo',
+                youtube: 'https://www.youtube.com/@AmanKumar-x4n7eor',
                 postman: 'https://documenter.getpostman.com/view/nexus-ai-api',
                 github: 'https://github.com/amankumarb778-crypto/Nexus-AI-charusat-hackathon.git'
             },
@@ -43,7 +60,7 @@ const Resume = () => {
             role: 'Frontend Architect',
             description: 'Modern UI/UX overhaul of IRCTC featuring a premium theme and high-impact animations.',
             links: {
-                youtube: 'https://youtu.be/irctc-demo-live',
+                youtube: 'https://www.youtube.com/@AmanKumar-x4n7eor',
                 github: 'https://github.com/amankumarb778-crypto/irctc.git'
             },
             tech: 'React, Framer Motion, Tailwind',
@@ -54,7 +71,7 @@ const Resume = () => {
             role: 'UI Developer',
             description: 'Immersive landing page for a premium e-bike brand with minimalist aesthetics.',
             links: {
-                youtube: 'https://youtu.be/fuUgaUs4Uig',
+                youtube: 'https://www.youtube.com/@AmanKumar-x4n7eor',
                 github: 'https://github.com/amankumarb778-crypto/trekbikes.git'
             },
             tech: 'React, Framer Motion, Tailwind',
@@ -84,6 +101,7 @@ const Resume = () => {
             </div>
 
             <motion.div
+                ref={resumeRef}
                 className="resume-paper max-w-5xl mx-auto bg-[var(--bg-card)] rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative"
                 variants={containerVariants}
                 initial="hidden"
