@@ -7,6 +7,7 @@
     <title>Aman Kumar - Resume</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         :root {
             --primary-font: 'Inter', sans-serif;
@@ -33,7 +34,8 @@
 
         @media print {
             body {
-                background-color: #fff;
+                background-color: #fff !important;
+                color: #000 !important;
                 padding: 0;
             }
 
@@ -44,8 +46,29 @@
                 padding: 10mm;
             }
 
-            .no-print {
-                display: none;
+            .no-print,
+            .download-btn {
+                display: none !important;
+            }
+
+            /* Prevent elements from being cut across pages */
+            .project-item,
+            .education-entry,
+            .skills-group,
+            .cert-list li,
+            .hack-list li,
+            .achievement-list li,
+            header,
+            .links-bar {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            h2,
+            h3,
+            .entry-title {
+                page-break-after: avoid;
+                break-after: avoid;
             }
         }
 
@@ -290,11 +313,47 @@
             margin-bottom: 15px;
             font-style: italic;
         }
+
+
+        /* Floating Download Button */
+        .download-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-family: var(--primary-font);
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            background: #222;
+        }
+
+        .download-btn:active {
+            transform: scale(0.95);
+        }
     </style>
 </head>
 
 <body>
-    <div class="resume-page">
+    <button class="download-btn no-print" onclick="generatePDF()">
+        <i class="fas fa-file-pdf"></i> Download PDF
+    </button>
+    <div class="resume-page" id="resume-content">
         <header>
             <div class="header-left">
                 <h1>AMAN KUMAR</h1>
@@ -469,6 +528,27 @@
             </main>
         </div>
     </div>
+
+    <script>
+        function generatePDF() {
+            const element = document.getElementById('resume-content');
+            const opt = {
+                margin: 0,
+                filename: 'Aman_Kumar_Static_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: {
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true,
+                    backgroundColor: '#ffffff'
+                },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+
+            // New Promise-based usage:
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
 </body>
 
 </html>
