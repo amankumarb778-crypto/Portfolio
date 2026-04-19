@@ -33,7 +33,7 @@ const Hero = () => {
 
     return (
         <section id="home" className="section relative min-h-screen flex items-center overflow-hidden">
-            <div className="container flex items-center justify-between gap-20 md:gap-32 lg:gap-56 lg:flex-nowrap flex-wrap-reverse relative z-10">
+            <div className="container flex items-center justify-between gap-12 md:gap-32 lg:gap-56 lg:flex-nowrap flex-wrap-reverse relative z-10">
 
                 {/* Text Content */}
                 <motion.div
@@ -43,7 +43,7 @@ const Hero = () => {
                     transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 >
                     <motion.h2
-                        className="text-3xl md:text-5xl lg:text-6xl font-semibold mb-6"
+                        className="text-2xl md:text-5xl lg:text-6xl font-semibold mb-4 md:mb-6"
                         style={{ color: 'var(--text-main)' }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ const Hero = () => {
                         className="mb-4 animate-text-shimmer"
                         style={{
                             fontFamily: "'Outfit', sans-serif",
-                            fontSize: 'clamp(4rem, 9vw, 9rem)',
+                            fontSize: 'clamp(3rem, 12vw, 9rem)',
                             fontWeight: '900',
                             lineHeight: 1.0,
                             letterSpacing: '-0.05em',
@@ -73,7 +73,7 @@ const Hero = () => {
                     </motion.h1>
 
                     <motion.h3
-                        className="text-2xl md:text-4xl lg:text-5xl font-semibold h-16 md:h-20"
+                        className="text-xl md:text-4xl lg:text-5xl font-semibold h-12 md:h-20"
                         style={{ color: 'var(--text-secondary)' }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -115,7 +115,7 @@ const Hero = () => {
                 >
                     {/* Orbiting ring */}
                     <motion.div
-                        className="absolute top-1/2 left-1/2 w-[290px] h-[290px] sm:w-[330px] sm:h-[330px] md:w-[410px] md:h-[410px] lg:w-[455px] lg:h-[455px] rounded-full pointer-events-none border border-dashed"
+                        className="absolute top-1/2 left-1/2 w-[240px] h-[240px] sm:w-[330px] sm:h-[330px] md:w-[410px] md:h-[410px] lg:w-[455px] lg:h-[455px] rounded-full pointer-events-none border border-dashed"
                         style={{
                             borderColor: 'rgba(var(--primary-rgb), 0.15)',
                             transform: 'translate(-50%, -50%)',
@@ -127,7 +127,7 @@ const Hero = () => {
                     </motion.div>
                     {/* Animated Mesh Gradient Background */}
                     <div
-                        className="absolute top-1/2 left-1/2 w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-full pointer-events-none"
+                        className="absolute top-1/2 left-1/2 w-[240px] h-[240px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-full pointer-events-none"
                         style={{
                             background: 'conic-gradient(from 0deg, var(--primary-color), var(--secondary-color), var(--primary-color), var(--secondary-color), var(--primary-color))',
                             filter: 'blur(80px)',
@@ -137,7 +137,7 @@ const Hero = () => {
                         }}
                     />
                     <div
-                        className="absolute top-1/2 left-1/2 w-[200px] h-[200px] sm:w-[260px] sm:h-[260px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] rounded-full pointer-events-none"
+                        className="absolute top-1/2 left-1/2 w-[180px] h-[180px] sm:w-[260px] sm:h-[260px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] rounded-full pointer-events-none"
                         style={{
                             background: 'radial-gradient(circle, rgba(var(--primary-rgb), 0.2), transparent 70%)',
                             animation: 'pulse-glow 4s ease-in-out infinite',
@@ -147,7 +147,7 @@ const Hero = () => {
 
                     {/* Profile Photo Circle */}
                     <div
-                        className="relative w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[380px] md:h-[380px] lg:w-[420px] lg:h-[420px] rounded-full p-[5px] cursor-default transition-all duration-400 z-10"
+                        className="relative w-[220px] h-[220px] sm:w-[300px] sm:h-[300px] md:w-[380px] md:h-[380px] lg:w-[420px] lg:h-[420px] rounded-full p-[5px] cursor-default transition-all duration-400 z-10"
                         style={{
                             background: 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
                             boxShadow: '0 0 0 2px rgba(var(--primary-rgb), 0.3)',

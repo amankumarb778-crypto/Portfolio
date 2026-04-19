@@ -158,10 +158,10 @@ const Contact = () => {
 
     const socialLinks = [
         { icon: <FaLinkedin size={20} />, href: 'https://www.linkedin.com/in/aman-kumar-067825379/', label: 'LinkedIn', color: '#0077b5' },
-        { icon: <FaGithub size={20} />, href: 'https://github.com/amankumarb778-crypto', label: 'GitHub', color: '#fff' },
+        { icon: <FaGithub size={20} />, href: 'https://github.com/amankumar1508', label: 'GitHub', color: '#fff' },
         { icon: <SiLeetcode size={20} />, href: 'https://leetcode.com/u/OVzm6rcAP2/', label: 'LeetCode', color: '#f89f1b' },
-        { icon: <FaTwitter size={20} />, href: 'https://twitter.com/yourusername', label: 'Twitter', color: '#1DA1F2' },
-        { icon: <FaYoutube size={20} />, href: 'https://youtube.com/@yourchannel', label: 'YouTube', color: '#FF0000' },
+        { icon: <FaTwitter size={20} />, href: 'https://x.com/kumar268463', label: 'Twitter', color: '#1DA1F2' },
+        { icon: <FaYoutube size={20} />, href: 'https://www.youtube.com/@AmanKumar-x4n7e', label: 'YouTube', color: '#FF0000' },
     ];
 
     const contactDetails = [
@@ -215,7 +215,7 @@ const Contact = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2">
                         {/* Left Side: Info */}
                         <div
-                            className="p-10 md:p-14 flex flex-col justify-between relative overflow-hidden"
+                            className="p-6 sm:p-10 md:p-14 flex flex-col justify-between relative overflow-hidden"
                             style={{ background: 'var(--bg-card)', borderRight: '1px solid var(--border-main)' }}
                         >
                             <div className="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-[var(--primary-color)] opacity-5 pointer-events-none" />
@@ -286,7 +286,7 @@ const Contact = () => {
                         </div>
 
                         {/* Right Side: Form */}
-                        <div className="p-10 md:p-14" style={{ background: 'rgba(var(--primary-rgb), 0.03)' }}>
+                        <div className="p-6 sm:p-10 md:p-14" style={{ background: 'rgba(var(--primary-rgb), 0.03)' }}>
                             <h3 className="text-xl font-semibold mb-8 text-[var(--text-main)]">Send me a message</h3>
 
                             <form onSubmit={handleSubmit}>

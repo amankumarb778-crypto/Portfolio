@@ -18,9 +18,8 @@ import Resume from './components/sections/Resume';
 import Docs from './components/sections/Docs';
 import Contact from './components/sections/Contact';
 import Footer from './components/sections/Footer';
-import './App.css';
-
-
+import { FaSun, FaMoon, FaCog } from 'react-icons/fa';
+import { useTheme } from './context/ThemeContext';
 import ThemeSwitcher from './components/common/ThemeSwitcher';
 import Loader from './components/common/Loader';
 import FloatingLogos from './components/common/FloatingLogos';
@@ -28,10 +27,8 @@ import PageNavigator from './components/common/PageNavigator';
 import CustomCursor from './components/common/CustomCursor';
 
 
-import { useTheme } from './context/ThemeContext';
-
-function App() {
-  const { theme } = useTheme();
+const App = () => {
+  const { theme, toggleTheme } = useTheme();
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [isLoading, setIsLoading] = useState(false);
   const [isAppVisible, setIsAppVisible] = useState(true);
@@ -73,7 +70,7 @@ function App() {
 
         <div className="os-window">
           {/* Premium Terminal Title Bar */}
-          <div className="os-titlebar relative flex items-center justify-between border-b border-white/5 shadow-sm">
+          <div className="os-titlebar relative flex items-center justify-between border-b border-white/5 shadow-sm px-4">
             {/* Left: Terminal Path */}
             <div className="flex items-center gap-2 z-10">
               <div className="w-3 h-3 rounded-full bg-[var(--primary-color)]/20 flex items-center justify-center">
@@ -93,25 +90,20 @@ function App() {
               </span>
             </div>
 
-            {/* Right: Window Controls (SVGs for perfect baseline alignment) */}
+            {/* Right: Window Controls replaced by Setting Icons */}
             <div className="flex items-center gap-4 z-10 opacity-70">
-              {/* Minimize */}
-              <button aria-label="Minimize" className="text-white/50 hover:text-white transition-colors">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 6H10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
+              <ThemeSwitcher />
+              <div className="w-px h-4 bg-white/10"></div>
+              <button
+                onClick={toggleTheme}
+                className="text-white/50 hover:text-[var(--primary-color)] transition-colors bg-transparent border-none cursor-pointer flex items-center"
+                aria-label="Toggle dark/light mode"
+              >
+                {theme === 'dark' ? <FaSun size={14} /> : <FaMoon size={14} />}
               </button>
-              {/* Maximize */}
-              <button aria-label="Maximize" className="text-white/50 hover:text-[var(--primary-color)] transition-colors">
-                <svg width="11" height="11" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="1.5" y="1.5" width="9" height="9" stroke="currentColor" strokeWidth="1.5" rx="1" />
-                </svg>
-              </button>
-              {/* Close */}
-              <button aria-label="Close" className="text-white/50 hover:text-red-400 transition-colors">
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 3L9 9M9 3L3 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
+              <div className="w-px h-4 bg-white/10"></div>
+              <button aria-label="Settings" className="text-white/50 hover:text-[var(--primary-color)] transition-colors bg-transparent border-none cursor-pointer flex items-center">
+                <FaCog size={14} />
               </button>
             </div>
           </div>

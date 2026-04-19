@@ -33,17 +33,26 @@
         }
 
         @media print {
+            @page {
+                margin: 0;
+                /* This removes the browser's native headers and footers */
+            }
+
+            html,
             body {
+                height: auto !important;
                 background-color: #fff !important;
                 color: #000 !important;
-                padding: 0;
+                padding: 0 !important;
+                margin: 0 !important;
             }
 
             .resume-page {
-                margin: 0;
-                box-shadow: none;
-                width: 100%;
-                padding: 10mm;
+                margin: 0 !important;
+                box-shadow: none !important;
+                width: 100% !important;
+                padding: 10mm 15mm 5mm 15mm !important;
+                /* Balanced padding to save space */
             }
 
             .no-print,
@@ -55,21 +64,47 @@
             .project-item,
             .education-entry,
             .skills-group,
-            .cert-list li,
-            .hack-list li,
-            .achievement-list li,
             header,
-            .links-bar {
-                page-break-inside: avoid;
-                break-inside: avoid;
+            .links-bar,
+            .bullet-list li,
+            .entry-detail {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+
+            section {
+                margin-bottom: 8px !important;
+                page-break-inside: auto;
             }
 
             h2,
-            h3,
-            .entry-title {
+            h3 {
+                margin-bottom: 6px !important;
                 page-break-after: avoid;
-                break-after: avoid;
             }
+
+            .bullet-list li {
+                margin-bottom: 2px !important;
+            }
+
+            .resume-page {
+                box-shadow: none !important;
+                padding-bottom: 0 !important;
+                margin-bottom: 0 !important;
+                height: auto !important;
+                max-height: 590mm !important;
+                /* Strictly less than 2 full A4 pages (594mm) */
+                overflow: hidden !important;
+            }
+
+            section:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        .page-break {
+            page-break-before: always;
+            break-before: page;
         }
 
         .resume-page {
@@ -310,7 +345,7 @@
         .summary-text {
             font-size: 16px;
             line-height: 1.7;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             font-style: italic;
         }
 
@@ -367,13 +402,14 @@
         </header>
 
         <div class="links-bar">
-            <a href="https://linkedin.com/in/aman-kumar" class="link-item"><i class="fab fa-linkedin"></i> LinkedIn</a>
-            <a href="https://github.com/amankumarb778-crypto" class="link-item"><i class="fab fa-github"></i> Github</a>
-            <a href="https://www.youtube.com/@AmanKumar-x4n7eor" class="link-item"><i class="fab fa-youtube"></i>
+            <a href="https://www.linkedin.com/in/aman-kumar-067825379/" class="link-item"><i
+                    class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/amankumar1508" class="link-item"><i class="fab fa-github"></i> Github</a>
+            <a href="https://www.youtube.com/@AmanKumar-x4n7e" class="link-item"><i class="fab fa-youtube"></i>
                 YouTube</a>
             <a href="#" class="link-item"><i class="fas fa-globe"></i> Portfolio</a>
-            <a href="#" class="link-item"><i class="fas fa-code"></i> Leetcode</a>
-            <a href="#" class="link-item"><i class="fab fa-twitter"></i> X (Twitter)</a>
+            <a href="https://leetcode.com/u/OVzm6rcAP2/" class="link-item"><i class="fas fa-code"></i> Leetcode</a>
+            <a href="https://x.com/kumar268463" class="link-item"><i class="fab fa-twitter"></i> X (Twitter)</a>
         </div>
 
         <div class="container">
@@ -464,13 +500,13 @@
                         <div class="entry-detail"><b>Technologies:</b> React.js, AI, Tailwind CSS, Node.js</div>
                         <div class="entry-links">
                             <b>Links:</b> <a href="https://nexuss-ai.netlify.app">Live</a> | <a
-                                href="https://github.com/amankumarb778-crypto/Nexus-AI-charusat-hackathon.git">Github</a>
-                            | <a href="https://www.youtube.com/@AmanKumar-x4n7eor">YouTube</a> | <a
+                                href="https://github.com/amankumar1508/Nexus-AI-charusat-hackathon.git">Github</a>
+                            | <a href="https://www.youtube.com/@AmanKumar-x4n7e">YouTube</a> | <a
                                 href="https://documenter.getpostman.com/view/nexus-ai-api">API Docs</a>
                         </div>
                     </div>
 
-                    <div class="project-item">
+                    <div class="project-item page-break">
                         <div class="entry-title">IRCTC Updation</div>
                         <div class="entry-detail">
                             <ul class="bullet-list">
@@ -485,8 +521,8 @@
                         <div class="entry-detail"><b>Technologies:</b> React, Framer Motion, Tailwind CSS</div>
                         <div class="entry-links">
                             <b>Links:</b> <a href="https://irctc-blush-omega.vercel.app/">Live</a> | <a
-                                href="https://github.com/amankumarb778-crypto/irctc.git">Github</a> | <a
-                                href="https://www.youtube.com/@AmanKumar-x4n7eor">YouTube Demo</a>
+                                href="https://github.com/amankumar1508/irctc.git">Github</a> | <a
+                                href="https://www.youtube.com/@AmanKumar-x4n7e">YouTube Demo</a>
                         </div>
                     </div>
 
@@ -506,8 +542,8 @@
                         <div class="entry-detail"><b>Technologies:</b> React.js, Framer Motion, Tailwind CSS, Vite</div>
                         <div class="entry-links">
                             <b>Links:</b> <a href="https://trekbikes23.netlify.app/">Live</a> | <a
-                                href="https://github.com/amankumarb778-crypto/trekbikes.git">Github</a> | <a
-                                href="https://www.youtube.com/@AmanKumar-x4n7eor">YouTube Demo</a>
+                                href="https://github.com/amankumar1508/trekbikes.git">Github</a> | <a
+                                href="https://www.youtube.com/@AmanKumar-x4n7e">YouTube Demo</a>
                         </div>
                     </div>
                 </section>
@@ -532,20 +568,32 @@
     <script>
         function generatePDF() {
             const element = document.getElementById('resume-content');
+
+            // Configuration for html2pdf
             const opt = {
-                margin: 0,
+                margin: [0, 0, 0, 0],
                 filename: 'Aman_Kumar_Static_Resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
+                image: { type: 'jpeg', quality: 1.0 },
                 html2canvas: {
-                    scale: 2,
+                    scale: 3,
                     useCORS: true,
                     letterRendering: true,
-                    backgroundColor: '#ffffff'
+                    backgroundColor: '#ffffff',
+                    scrollX: 0,
+                    scrollY: 0,
+                    logging: false
                 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                jsPDF: {
+                    unit: 'mm',
+                    format: 'a4',
+                    orientation: 'portrait',
+                    compress: true
+                },
+                // Restored simpler fix:
+                pagebreak: { mode: 'css' }
             };
 
-            // New Promise-based usage:
+            // Use Worker for better reliability
             html2pdf().set(opt).from(element).save();
         }
     </script>

@@ -30,7 +30,7 @@ const projectsData = [
         image: '/projects/trek-bikes.png',
         links: {
             live: 'https://trekbikes23.netlify.app/',
-            github: 'https://github.com/amankumarb778-crypto/trekbikes.git',
+            github: 'https://github.com/amankumar1508/trekbikes.git',
             youtube: 'https://youtu.be/fuUgaUs4Uig',
             figma: 'https://figma.com/file/trek-bikes-id',
         },
@@ -46,7 +46,7 @@ const projectsData = [
         image: '/projects/nexus-ai.png',
         links: {
             live: 'https://nexuss-ai.netlify.app',
-            github: 'https://github.com/amankumarb778-crypto/Nexus-AI-charusat-hackathon.git',
+            github: 'https://github.com/amankumar1508/Nexus-AI-charusat-hackathon.git',
             youtube: 'https://youtu.be/nexus-ai-demo',
             postman: 'https://documenter.getpostman.com/view/nexus-ai-api',
         },
@@ -62,7 +62,7 @@ const projectsData = [
         image: '/projects/irctc.png',
         links: {
             live: 'https://irctc-blush-omega.vercel.app/',
-            github: 'https://github.com/amankumarb778-crypto/irctc.git',
+            github: 'https://github.com/amankumar1508/irctc.git',
             youtube: 'https://youtu.be/irctc-demo-live',
         },
     },
@@ -77,65 +77,12 @@ const projectsData = [
         image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
         links: {
             live: 'https://codinggita-clone.netlify.app',
-            github: 'https://github.com/amankumarb778-crypto/codinggita-clone',
-        },
-    },
-    {
-        id: 6,
-        title: 'Premium Portfolio OS',
-        category: 'Frontend',
-        problem: 'Standard portfolios often feel like static documents rather than interactive experiences.',
-        solution: 'Engineered this Portfolio OS with glassmorphism, 3D tilt effects, and a terminal title bar.',
-        outcome: 'An immersive digital environment that showcases technical architectural skills.',
-        tags: ['React', 'Aceternity UI', 'Framer Motion', 'Three.js'],
-        image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800',
-        links: {
-            live: 'https://aman-portfolio-os.vercel.app',
-            github: 'https://github.com/amankumarb778-crypto/portfolio',
-        },
-    },
-    {
-        id: 7,
-        title: 'Data Structures & Algorithms in C',
-        category: 'More',
-        problem: 'Understanding core data structures is essential but often taught without practical implementation.',
-        solution: 'Implemented linked lists, stacks, queues, trees, and sorting algorithms from scratch in C.',
-        outcome: 'A comprehensive library of DSA implementations with clean, well-documented C code.',
-        tags: ['C', 'DSA', 'Algorithms'],
-        image: 'https://images.unsplash.com/photo-1515879218367-8466d910aede?auto=format&fit=crop&q=80&w=800',
-        links: {
-            github: 'https://github.com/amankumar1508/dsa-in-c',
-        },
-    },
-    {
-        id: 8,
-        title: 'Student Management System – C++',
-        category: 'More',
-        problem: 'Managing student records manually is error-prone and inefficient.',
-        solution: 'Built a console-based CRUD application using C++ with OOP principles like inheritance and polymorphism.',
-        outcome: 'A fast, reliable system for managing student data with file-based persistence.',
-        tags: ['C++', 'OOP', 'File Handling'],
-        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800',
-        links: {
-            github: 'https://github.com/amankumar1508/student-management-cpp',
-        },
-    },
-    {
-        id: 9,
-        title: 'Interactive Quiz App – Vanilla JS',
-        category: 'More',
-        problem: 'Static quizzes lack engagement and instant feedback for learners.',
-        solution: 'Created a dynamic quiz application with timer, score tracking, and category selection using pure JavaScript.',
-        outcome: 'An engaging, lightweight quiz experience with no framework dependencies.',
-        tags: ['JavaScript', 'DOM Manipulation', 'CSS3'],
-        image: 'https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&q=80&w=800',
-        links: {
-            github: 'https://github.com/amankumar1508/quiz-app-js',
+            github: 'https://github.com/amankumar1508/codinggita-clone',
         },
     },
 ];
 
-const TABS = ['All', 'Games', 'Clones', 'Full Stack', 'Frontend', 'More'];
+const TABS = ['All', 'Games', 'Clones', 'Full Stack', 'Frontend'];
 
 const ProjectCard = ({ project, index }) => {
     const cardRef = useRef(null);

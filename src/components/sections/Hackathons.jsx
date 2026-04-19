@@ -12,7 +12,7 @@ const hackathonsData = [
         solution: 'Developed an enterprise-grade AI Resume Optimizer that provides intelligent feedback using NLP techniques.',
         outcome: 'Secured a top position and helped users achieve 40% higher interview hit rates with optimized resumes.',
         links: {
-            github: 'https://github.com/amankumarb778-crypto/Nexus-AI-charusat-hackathon.git',
+            github: 'https://github.com/amankumar1508/Nexus-AI-charusat-hackathon.git',
             live: 'https://nexuss-ai.netlify.app',
         },
         tags: ['AI', 'React', 'NLP']
@@ -26,7 +26,7 @@ const hackathonsData = [
         solution: 'Modernized the interface with a premium Midnight & Azure theme, adding advanced filtering and real-time availability features.',
         outcome: 'Received high praise for accessibility features and professional design aesthetics.',
         links: {
-            github: 'https://github.com/amankumarb778-crypto/irctc.git',
+            github: 'https://github.com/amankumar1508/irctc.git',
             live: 'https://irctc-blush-omega.vercel.app/',
         },
         tags: ['UI/UX', 'Framer Motion']

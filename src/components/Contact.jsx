@@ -18,7 +18,7 @@ const Contact = () => {
                 <a href="mailto:[EMAIL_ADDRESS]" className="btn contact-btn">Say Hello</a>
                 <div className="contact-socials">
                     <a
-                        href="https://github.com/amankumarb778-crypto"
+                        href="https://github.com/amankumar1508"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="social-icon"

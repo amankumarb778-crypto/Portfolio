@@ -12,6 +12,7 @@ const Docs = () => {
     const [selectedDoc, setSelectedDoc] = useState(null);
     const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
     const [activeTab, setActiveTab] = useState('drive');
+    const [isGenerating, setIsGenerating] = useState(false);
 
     const sidebarItems = [
         { id: 'priority', label: 'Priority', icon: <FaStar size={16} /> },
@@ -47,10 +48,15 @@ const Docs = () => {
         }
     ];
 
-    const handleDownload = () => {
+    const handleDownload = async () => {
         if (selectedDoc === 'resume-interactive') {
             const element = document.querySelector('.resume-paper-viewer');
             if (!element) return;
+
+            setIsGenerating(true);
+
+            // Wait for animations to finish and layout to stabilize
+            await new Promise(resolve => setTimeout(resolve, 800));
 
             const opt = {
                 margin: 0,
@@ -60,11 +66,17 @@ const Docs = () => {
                     scale: 2,
                     useCORS: true,
                     letterRendering: true,
-                    backgroundColor: '#0a0a0a'
+                    backgroundColor: '#0a0a0a',
+                    logging: true
                 },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
-            html2pdf().set(opt).from(element).save();
+
+            try {
+                await html2pdf().set(opt).from(element).save();
+            } finally {
+                setIsGenerating(false);
+            }
         } else if (selectedDoc === 'resume-static') {
             window.open('/aman_kumar.pdf', '_blank');
         }
@@ -190,7 +202,7 @@ const Docs = () => {
                                                 </button>
                                                 <button
                                                     onClick={() => {
-                                                        if (doc.id === 'resume-static') window.open('/aman_kumar.html', '_blank');
+                                                        if (doc.id === 'resume-static') window.open('/aman_kumar.pdf', '_blank');
                                                         else setSelectedDoc(doc.id);
                                                     }}
                                                     className="p-1.5 text-white/20 hover:text-white transition-colors"
@@ -277,7 +289,7 @@ const Docs = () => {
                                             onClick={handleDownload}
                                             className="flex items-center gap-2 px-5 py-2.5 bg-white text-black rounded-xl text-[10px] font-black hover:bg-white/90 active:scale-95 transition-all shadow-lg uppercase tracking-widest"
                                         >
-                                            <FaDownload /> GENERATE
+                                            <FaDownload className={isGenerating ? "animate-bounce" : ""} /> {isGenerating ? "PREPARING..." : "GENERATE"}
                                         </button>
                                     )}
                                     <button
@@ -293,8 +305,8 @@ const Docs = () => {
                             <div className="flex-grow overflow-y-auto bg-black scrollbar-hide relative flex flex-col items-center">
                                 {selectedDoc === 'resume-interactive' ? (
                                     <div className="w-full p-2 md:p-12 min-h-full flex items-center justify-center bg-[var(--bg-dark)]">
-                                        <div className="resume-paper-viewer origin-top transform scale-[0.6] sm:scale-100 shadow-[0_0_60px_rgba(var(--primary-rgb),0.2)]">
-                                            <Resume isViewer={true} />
+                                        <div className={`resume-paper-viewer origin-top transform transition-all duration-500 ${isGenerating ? "scale-100" : "scale-[0.6] sm:scale-100"} shadow-[0_0_60px_rgba(var(--primary-rgb),0.2)]`}>
+                                            <Resume isViewer={true} isGenerating={isGenerating} />
                                         </div>
                                     </div>
                                 ) : (

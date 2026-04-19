@@ -39,7 +39,7 @@ const About = () => {
                 left: '50%',
                 x: bgTextX,
                 opacity: bgTextOpacity,
-                fontSize: '25vw',
+                fontSize: 'clamp(15vw, 25vw, 25vw)',
                 fontWeight: '900',
                 color: 'var(--text-main)',
                 zIndex: 0,
@@ -65,7 +65,7 @@ const About = () => {
                         variants={fadeUp}
                         animate="visible"
                         style={{
-                            fontSize: 'clamp(3rem, 8vw, 4.5rem)',
+                            fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
                             textAlign: 'center',
                             marginBottom: '4rem',
                             fontFamily: 'var(--font-heading)',
@@ -87,7 +87,7 @@ const About = () => {
                         variants={fadeUp}
                         animate="visible"
                         style={{
-                            fontSize: '1.5rem',
+                            fontSize: 'clamp(1.1rem, 3vw, 1.5rem)',
                             color: 'var(--text-secondary)',
                             lineHeight: 1.7,
                             textAlign: 'center',

@@ -5,7 +5,7 @@ import { SiPostman, SiLeetcode } from 'react-icons/si';
 import html2pdf from 'html2pdf.js';
 import './Resume.css';
 
-const Resume = ({ isViewer = false }) => {
+const Resume = ({ isViewer = false, isGenerating = false }) => {
     const resumeRef = React.useRef(null);
 
     const handlePrint = () => {
@@ -48,9 +48,9 @@ const Resume = ({ isViewer = false }) => {
             role: 'Full Stack Developer',
             description: 'Enterprise-grade AI Resume Optimizer that analyzes resumes and provides intelligent feedback.',
             links: {
-                youtube: 'https://www.youtube.com/@AmanKumar-x4n7eor',
+                youtube: 'https://www.youtube.com/@AmanKumar-x4n7e',
                 postman: 'https://documenter.getpostman.com/view/nexus-ai-api',
-                github: 'https://github.com/amankumarb778-crypto/Nexus-AI-charusat-hackathon.git'
+                github: 'https://github.com/amankumar1508/Nexus-AI-charusat-hackathon.git'
             },
             tech: 'React, Node.js, AI, Tailwind',
             highlights: ['Skill gap detection', 'Intelligent feedback', 'Real-time scoring']
@@ -60,8 +60,8 @@ const Resume = ({ isViewer = false }) => {
             role: 'Frontend Architect',
             description: 'Modern UI/UX overhaul of IRCTC featuring a premium theme and high-impact animations.',
             links: {
-                youtube: 'https://www.youtube.com/@AmanKumar-x4n7eor',
-                github: 'https://github.com/amankumarb778-crypto/irctc.git'
+                youtube: 'https://www.youtube.com/@AmanKumar-x4n7e',
+                github: 'https://github.com/amankumar1508/irctc.git'
             },
             tech: 'React, Framer Motion, Tailwind',
             highlights: ['Midnight & Azure theme', 'Smooth transitions', 'Optimized performance']
@@ -71,8 +71,8 @@ const Resume = ({ isViewer = false }) => {
             role: 'UI Developer',
             description: 'Immersive landing page for a premium e-bike brand with minimalist aesthetics.',
             links: {
-                youtube: 'https://www.youtube.com/@AmanKumar-x4n7eor',
-                github: 'https://github.com/amankumarb778-crypto/trekbikes.git'
+                youtube: 'https://www.youtube.com/@AmanKumar-x4n7e',
+                github: 'https://github.com/amankumar1508/trekbikes.git'
             },
             tech: 'React, Framer Motion, Tailwind',
             highlights: ['Minimalist design', 'Product showcases', 'Responsive layout']
@@ -106,7 +106,7 @@ const Resume = ({ isViewer = false }) => {
                 ref={resumeRef}
                 className="resume-paper max-w-5xl mx-auto bg-[var(--bg-card)] rounded-3xl overflow-hidden border border-white/10 shadow-2xl relative"
                 variants={containerVariants}
-                initial="hidden"
+                initial={isGenerating ? "visible" : "hidden"}
                 animate="visible"
             >
                 {/* Decorative background glow */}
@@ -257,8 +257,8 @@ const Resume = ({ isViewer = false }) => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                             <motion.div variants={itemVariants} className="space-y-8">
                                 <div className="flex items-center gap-4">
-                                    <FaTrophy className="text-[var(--primary-color)]" size={20} />
-                                    <h2 className="text-xl font-black text-white uppercase tracking-wider">Hackathons</h2>
+                                    <FaTrophy className="text-[var(--primary-color)] flex-shrink-0" size={20} />
+                                    <h2 className="text-xl font-black text-white uppercase tracking-wider truncate">Hackathons</h2>
                                 </div>
                                 <div className="space-y-6">
                                     {[
@@ -278,8 +278,8 @@ const Resume = ({ isViewer = false }) => {
 
                             <motion.div variants={itemVariants} className="space-y-8">
                                 <div className="flex items-center gap-4">
-                                    <FaAward className="text-[var(--primary-color)]" size={20} />
-                                    <h2 className="text-xl font-black text-white uppercase tracking-wider">Certifications</h2>
+                                    <FaAward className="text-[var(--primary-color)] flex-shrink-0" size={20} />
+                                    <h2 className="text-xl font-black text-white uppercase tracking-wider truncate">Certifications</h2>
                                 </div>
                                 <div className="grid gap-3">
                                     {certificates.map((c, i) => (

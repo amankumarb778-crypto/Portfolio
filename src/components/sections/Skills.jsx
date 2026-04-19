@@ -93,7 +93,7 @@ const Skills = () => {
                 </motion.h2>
 
                 {/* Categories Grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '40px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
                     {['Frontend', 'Backend', 'Languages', 'Libraries', 'Tools', 'Deployment'].map((category, catIndex) => {
                         const categorySkills = sortedSkills.filter(s => s.category === category);
                         if (categorySkills.length === 0) return null;
@@ -141,7 +141,7 @@ const Skills = () => {
                                                     boxShadow: '0 0 8px var(--primary-color)',
                                                 }}
                                             />
-                                            <h3 className="text-2xl font-bold text-white tracking-wide m-0">{category}</h3>
+                                            <h3 className="text-xl md:text-2xl font-bold text-white tracking-wide m-0">{category}</h3>
                                             <span className="ml-auto text-xs font-mono text-white/30">{categorySkills.length} skills</span>
                                         </div>
 
@@ -187,7 +187,7 @@ const Skills = () => {
                         transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="glass-card"
                         style={{
-                            padding: '40px',
+                            padding: 'clamp(20px, 5vw, 40px)',
                             maxWidth: '900px',
                             margin: '0 auto',
                             background: 'var(--bg-card)',
@@ -222,7 +222,7 @@ const Skills = () => {
                                 whileHover={{ scale: 1.03, borderColor: 'rgba(248, 159, 27, 0.3)' }}
                             >
                                 <SiLeetcode size={28} color="#f89f1b" />
-                                <h3 style={{ fontSize: '1.8rem', margin: 0, fontWeight: '700' }}>LeetCode Profile</h3>
+                                <h3 style={{ fontSize: '1.4rem', md: '1.8rem', margin: 0, fontWeight: '700' }}>LeetCode Profile</h3>
                             </motion.div>
                         </div>
 
