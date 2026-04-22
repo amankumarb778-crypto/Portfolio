@@ -48,6 +48,7 @@ const Resume = ({ isViewer = false, isGenerating = false }) => {
             role: 'Full Stack Developer',
             description: 'Enterprise-grade AI Resume Optimizer that analyzes resumes and provides intelligent feedback.',
             links: {
+                live: 'https://nexuss-ai.netlify.app',
                 youtube: 'https://www.youtube.com/@AmanKumar-x4n7e',
                 postman: 'https://documenter.getpostman.com/view/nexus-ai-api',
                 github: 'https://github.com/amankumar1508/Nexus-AI-charusat-hackathon.git'
@@ -60,6 +61,7 @@ const Resume = ({ isViewer = false, isGenerating = false }) => {
             role: 'Frontend Architect',
             description: 'Modern UI/UX overhaul of IRCTC featuring a premium theme and high-impact animations.',
             links: {
+                live: 'https://irctc-blush-omega.vercel.app/',
                 youtube: 'https://www.youtube.com/@AmanKumar-x4n7e',
                 github: 'https://github.com/amankumar1508/irctc.git'
             },
@@ -71,6 +73,7 @@ const Resume = ({ isViewer = false, isGenerating = false }) => {
             role: 'UI Developer',
             description: 'Immersive landing page for a premium e-bike brand with minimalist aesthetics.',
             links: {
+                live: 'https://trekbikes.vercel.app/',
                 youtube: 'https://www.youtube.com/@AmanKumar-x4n7e',
                 github: 'https://github.com/amankumar1508/trekbikes.git'
             },
@@ -82,8 +85,6 @@ const Resume = ({ isViewer = false, isGenerating = false }) => {
     const certificates = [
         'PostgreSQL & Node.js (CodingGita)',
         'Udemy Full Stack Certification',
-        'Responsive Web Design (freeCodeCamp)',
-        'Problem Solving Basic (HackerRank)',
         'Hacrux Hackathon Excellence',
         'Doppelganger Build Sprint'
     ];
@@ -128,7 +129,7 @@ const Resume = ({ isViewer = false, isGenerating = false }) => {
                             <div className="space-y-3">
                                 <div className="flex items-center gap-3 text-white/70">
                                     <FaPhone className="text-[var(--primary-color)]" size={14} />
-                                    <span className="text-sm font-medium">8128281326</span>
+                                    <span className="text-sm font-medium">9279811913</span>
                                 </div>
                                 <div className="flex items-center gap-3 text-white/70">
                                     <FaEnvelope className="text-[var(--primary-color)]" size={14} />
@@ -207,7 +208,7 @@ const Resume = ({ isViewer = false, isGenerating = false }) => {
                     </aside>
 
                     {/* Right Column - Main Content */}
-                    <main className="lg:col-span-8 p-8 md:p-16 space-y-16">
+                    <main className="lg:col-span-8 p-8 md:p-12 space-y-10">
                         {/* Name & Summary */}
                         <motion.div variants={itemVariants} className="space-y-8">
                             <div>
@@ -235,6 +236,7 @@ const Resume = ({ isViewer = false, isGenerating = false }) => {
                                             <div>
                                                 <h3 className="text-xl font-bold text-white group-hover:text-[var(--primary-color)] transition-colors">{p.title}</h3>
                                                 <div className="flex gap-4 mt-2 no-print">
+                                                    <a href={p.links.live} target="_blank" className="text-xs font-bold text-[var(--primary-color)] flex items-center gap-1 hover:underline"><FaGlobe /> Live</a>
                                                     <a href={p.links.youtube} target="_blank" className="text-xs font-bold text-[#FF0000] flex items-center gap-1 hover:underline"><FaYoutube /> Demo</a>
                                                     {p.links.postman && <a href={p.links.postman} target="_blank" className="text-xs font-bold text-[#FF6C37] flex items-center gap-1 hover:underline"><SiPostman /> API Docs</a>}
                                                     <a href={p.links.github} target="_blank" className="text-xs font-bold text-white/40 flex items-center gap-1 hover:underline"><FaGithub /> Source</a>

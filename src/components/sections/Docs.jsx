@@ -25,17 +25,6 @@ const Docs = () => {
 
     const docsData = [
         {
-            id: 'resume-interactive',
-            title: 'Aman_Kumar_Interactive.os',
-            type: 'System File',
-            owner: 'me',
-            lastModified: 'Apr 18, 2026',
-            fileSize: '452 KB',
-            description: 'Dynamic React-based professional operating system resume.',
-            icon: <FaFileAlt className="text-blue-500" size={24} />,
-            color: '#4285F4' // Google Blue
-        },
-        {
             id: 'resume-static',
             title: 'Aman_Kumar_Professional.pdf',
             type: 'PDF Document',

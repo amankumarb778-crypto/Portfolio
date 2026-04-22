@@ -64,26 +64,6 @@ const certificatesData = [
         link: 'https://res.cloudinary.com/dgg4scip6/image/upload/q_auto/f_auto/v1776413482/Aman_kumar_wplz4x.png',
         category: 'Hackathon',
     },
-    {
-        id: 7,
-        title: 'Responsive Web Design',
-        issuer: 'FreeCodeCamp',
-        date: '2023',
-        description: 'Certified in Responsive Web Design, covering HTML/CSS, Flexbox, Grid, and accessible design patterns.',
-        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800',
-        link: 'https://www.freecodecamp.org/certification/aman-kumar/responsive-web-design',
-        category: 'Skill',
-    },
-    {
-        id: 8,
-        title: 'Problem Solving (Basic)',
-        issuer: 'HackerRank',
-        date: '2024',
-        description: 'Demonstrated proficiency in solving basic algorithms and data structure challenges on the HackerRank platform.',
-        image: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&q=80&w=800',
-        link: 'https://www.hackerrank.com/certificates/problem-solving-basic',
-        category: 'Skill',
-    }
 ];
 
 const Certificates = () => {
