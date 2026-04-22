@@ -648,6 +648,42 @@ p,
   overflow-y: auto;
   overflow-x: hidden;
   position: relative;
+  /* Hide standard scrollbar for OS look */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.os-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scrollbar hiding utility */
+.hide-scrollbar {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Elegant scrollbar for components that might need it */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--primary-rgb), 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--primary-rgb), 0.4);
 }
 
 /* Loading spinner */
