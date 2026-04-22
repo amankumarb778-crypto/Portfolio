@@ -29,7 +29,7 @@ const projectsData = [
         tags: ['React', 'Framer Motion', 'Tailwind CSS', 'Vite'],
         image: '/projects/trek-bikes.png',
         links: {
-            live: 'https://trekbikes23.netlify.app/',
+            live: 'https://trekbikes.vercel.app/',
             github: 'https://github.com/amankumar1508/trekbikes.git',
             youtube: 'https://youtu.be/fuUgaUs4Uig',
             figma: 'https://figma.com/file/trek-bikes-id',

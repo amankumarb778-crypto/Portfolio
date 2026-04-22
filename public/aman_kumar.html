@@ -27,7 +27,7 @@
         body {
             font-family: var(--primary-font);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.48;
             background-color: #f0f0f0;
             padding: 40px 0;
         }
@@ -73,13 +73,14 @@
             }
 
             section {
-                margin-bottom: 8px !important;
-                page-break-inside: auto;
+                margin-bottom: 15px !important;
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
             }
 
             h2,
             h3 {
-                margin-bottom: 6px !important;
+                margin-bottom: 4px !important;
                 page-break-after: avoid;
             }
 
@@ -92,9 +93,6 @@
                 padding-bottom: 0 !important;
                 margin-bottom: 0 !important;
                 height: auto !important;
-                max-height: 590mm !important;
-                /* Strictly less than 2 full A4 pages (594mm) */
-                overflow: hidden !important;
             }
 
             section:last-child {
@@ -214,7 +212,7 @@
         }
 
         section {
-            margin-bottom: 42px;
+            margin-bottom: 28px;
         }
 
         h2 {
@@ -248,8 +246,8 @@
         .bullet-list li {
             position: relative;
             padding-left: 15px;
-            margin-bottom: 8px;
-            font-size: 16px;
+            margin-bottom: 6px;
+            font-size: 15.5px;
         }
 
         .bullet-list li::before {
@@ -270,8 +268,8 @@
         }
 
         .achievement-list li {
-            font-size: 18px;
-            margin-bottom: 12px;
+            font-size: 17px;
+            margin-bottom: 8px;
         }
 
         /* Skills specific */
@@ -293,7 +291,7 @@
         .entry-title {
             font-size: 18px;
             font-weight: 700;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
             font-family: var(--primary-font);
         }
 
@@ -344,8 +342,8 @@
 
         .summary-text {
             font-size: 16px;
-            line-height: 1.7;
-            margin-bottom: 25px;
+            line-height: 1.6;
+            margin-bottom: 15px;
             font-style: italic;
         }
 
@@ -395,7 +393,7 @@
                 <div class="role">Full-Stack Developer</div>
             </div>
             <div class="header-right">
-                <div class="contact-item">8128281326 <i class="fas fa-phone"></i></div>
+                <div class="contact-item">9279811913 <i class="fas fa-phone"></i></div>
                 <div class="contact-item">aman.kr.cg@gmail.com <i class="fas fa-envelope"></i></div>
                 <div class="contact-item">Kalol, Gujarat <i class="fas fa-location-dot"></i></div>
             </div>
@@ -434,15 +432,13 @@
                         <li>Udemy Certificate of Completion</li>
                         <li>PostgreSQL Certification — CodingGita</li>
                         <li>Node.js Certification — CodingGita</li>
-                        <li>Responsive Web Design — FreeCodeCamp</li>
-                        <li>Problem Solving (Basic) — HackerRank</li>
                         <li>Doppelganger — OpenPools (Hackathon)</li>
                         <li>ArtPark CodeForge Hackathon</li>
                         <li>Hacrux Hackathon Excellence</li>
                     </ul>
                 </section>
 
-                <section>
+                <section class="page-break">
                     <h2>HACKATHON</h2>
                     <ul class="bullet-list hack-list">
                         <li><b>Redesign Hackathon — Top 4 Finalist</b><br>Out of 150 students, Round 1 Qualifier &
@@ -541,7 +537,7 @@
                         </div>
                         <div class="entry-detail"><b>Technologies:</b> React.js, Framer Motion, Tailwind CSS, Vite</div>
                         <div class="entry-links">
-                            <b>Links:</b> <a href="https://trekbikes23.netlify.app/">Live</a> | <a
+                            <b>Links:</b> <a href="https://trekbikes.vercel.app/">Live</a> | <a
                                 href="https://github.com/amankumar1508/trekbikes.git">Github</a> | <a
                                 href="https://www.youtube.com/@AmanKumar-x4n7e">YouTube Demo</a>
                         </div>
